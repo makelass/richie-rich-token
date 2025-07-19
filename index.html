@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>$RICHR - Richie Rich Token</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      line-height: 1.6;
+    }
+    header {
+      background: #1a1a1a;
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    header img {
+      width: 120px;
+      border-radius: 12px;
+    }
+    header h1 {
+      font-size: 3rem;
+      margin: 1rem 0 0.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      color: #ccc;
+    }
+    .buttons {
+      margin-top: 1rem;
+    }
+    .buttons button, .buttons a {
+      background-color: #00ffaa;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.2rem;
+      margin: 0.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      text-decoration: none;
+    }
+    section {
+      max-width: 900px;
+      margin: auto;
+      padding: 2rem;
+    }
+    .tokenomics, .roadmap {
+      background: #1f1f1f;
+      border-radius: 10px;
+      padding: 2rem;
+      margin-top: 2rem;
+    }
+    .tokenomics ul, .roadmap ul {
+      list-style: none;
+      padding: 0;
+    }
+    .tokenomics li, .roadmap li {
+      margin: 0.5rem 0;
+      padding-left: 1rem;
+      position: relative;
+    }
+    .tokenomics li::before, .roadmap li::before {
+      content: "✅";
+      position: absolute;
+      left: 0;
+      color: #00ffae;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    a {
+      color: #00ffaa;
+    }
+  </style>
+  <script>
+    async function connectWallet() {
+      if ('solana' in window) {
+        const provider = window.solana;
+        if (provider.isPhantom) {
+          try {
+            const resp = await provider.connect();
+            alert("Connected: " + resp.publicKey.toString());
+          } catch (err) {
+            console.error(err);
+          }
+        }
+      } else {
+        alert("Phantom wallet not found. Install it first.");
+      }
+    }
+  </script>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="RICHR Logo">
+    <h1>$RICHR - Richie Rich Token</h1>
+    <p>Get RICHR or die memeing 💸</p>
+    <div class="buttons">
+      <button onclick="connectWallet()">Connect Wallet</button>
+      <a href="#" target="_blank">View on Solana Explorer</a>
+    </div>
+  </header>
+
+  <section>
+    <h2>🚀 What is $RICHR?</h2>
+    <p>$RICHR is the meme-powered Solana token with one mission: to make the internet laugh and its holders RICHR. Built on community, memes, and a tiny bit of madness, it's time to flip the rich narrative.</p>
+
+    <div class="tokenomics">
+      <h2>📊 Tokenomics</h2>
+      <ul>
+        <li>50% - Community Airdrop</li>
+        <li>20% - Liquidity Pool</li>
+        <li>15% - Burn 🔥</li>
+        <li>10% - Marketing & Growth</li>
+        <li>5% - Team (locked)</li>
+      </ul>
+    </div>
+
+    <div class="roadmap">
+      <h2>🗺️ Roadmap</h2>
+      <ul>
+        <li>Phase 1: Token deployed on Solana</li>
+        <li>Phase 2: Launch website, art, and meme drops</li>
+        <li>Phase 3: Community airdrop & first burns</li>
+        <li>Phase 4: Listed on Raydium & Solana DEXs</li>
+        <li>Phase 5: $RICHR becomes the king of memes 👑</li>
+      </ul>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Richie Rich Token. Built with memes and ambition. | <a href="#">Twitter</a> • <a href="#">Discord</a>
+  </footer>
+</body>
+</html>
